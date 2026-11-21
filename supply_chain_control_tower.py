@@ -335,7 +335,7 @@ inventory_total = filtered["inventory_on_hand"].sum(min_count=1)
 cols = st.columns(5, gap="small")
 with cols[0]: kpi_card("Net revenue", money(revenue_total), "Filtered order / shipment value")
 with cols[1]: kpi_card("Fill rate", f"{fill_rate:.1%}" if pd.notna(fill_rate) else "—", f"{shipped_total:,.0f} of {ordered_total:,.0f} units", BLUE)
-with cols[2]: kpi_card("On-time delivery", f"{notif_rate:.1%}" if pd.notna(notif_rate) else "—", "Orders delivered on or before promise", TEAL)
+with cols[2]: kpi_card("On-time delivery", f"{otif_rate:.1%}" if pd.notna(notif_rate) else "—", "Orders delivered on or before promise", TEAL)
 with cols[3]: kpi_card("Inventory on hand", f"{inventory_total:,.0f}" if pd.notna(inventory_total) else "—", "Units across the filtered network", AMBER)
 with cols[4]: kpi_card("Forecast WAPE", f"{wape:.1%}" if pd.notna(wape) else "—", "Lower is better · vs. ordered quantity", RED)
 
