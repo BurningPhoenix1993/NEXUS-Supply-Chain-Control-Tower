@@ -400,7 +400,9 @@ if not flow_base.empty:
         node=dict(label=labels, pad=14, thickness=17, color=[TEAL if "Hub" in x else BLUE if "Plant" in x else "#3B526F" for x in labels], line=dict(color="#273B55", width=1)),
         link=dict(source=sources, target=targets, value=values, color="rgba(45,212,191,0.24)"),
     ))
-    fig.update_layout(**PLOT_LAYOUT, height=380, margin=dict(l=8, r=8, t=18, b=8))
+    fig.update_layout(**PLOT_LAYOUT, height=380)
+fig.update_layout(margin=dict(l=8, r=8, t=18, b=8))
+
     st.plotly_chart(fig, use_container_width=True, config={"displayModeBar": False})
 else:
     st.info("No shipped volume is available to display in the network flow.")
